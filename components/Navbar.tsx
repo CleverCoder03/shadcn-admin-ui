@@ -20,6 +20,7 @@ import {
 
 //NEXT-THEME
 import { useTheme } from "next-themes";
+import { SidebarTrigger } from "./ui/sidebar";
 
 const Navbar = () => {
 
@@ -27,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center p-4">
-      collapseButton
+      <SidebarTrigger />
       <div className="flex gap-4 items-center">
         <Link href="/">Dashboard</Link>
         {/* THEME MENU */}
