@@ -1,5 +1,7 @@
+import AppLineChart from "@/components/AppLineChart";
 import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
@@ -110,7 +112,7 @@ const SingleUserPage = () => {
               <h1 className="text-xl font-semibold">User Information</h1>
               <Sheet>
                 <SheetTrigger asChild>
-                    <Button>Edit User</Button>
+                  <Button>Edit User</Button>
                 </SheetTrigger>
                 <EditUser />
               </Sheet>
@@ -155,9 +157,21 @@ const SingleUserPage = () => {
         {/* RIGHT */}
         <div className="w-full space-y-6 xl:w-2/3">
           {/* USER CARD CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg"></div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">CleverCoder</h1>
+            </div>
+            <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, mollitia! Asperiores eius autem illo dolores quidem a. Neque, excepturi libero?</p>
+          </div>
           {/* CHART CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg"></div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <h1 className="text-xl font-semibold">User Activity Chart</h1>
+            <AppLineChart />
+          </div>
         </div>
       </div>
     </div>
